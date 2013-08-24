@@ -11,6 +11,10 @@
         initializer: function() {
             var instance = this;
 
+            instance.bindUI();
+            instance.renderUI();
+            instance.syncUI();
+
             return instance;
         },
 
