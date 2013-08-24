@@ -1,3 +1,0 @@
-## Credits
-
-Icons by IconMonstr
