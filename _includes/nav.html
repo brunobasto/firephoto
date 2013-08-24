@@ -8,14 +8,14 @@
       {% else %}
         <li class="tab-item">
       {% endif %}
-          <a href="./{{node.url}}">
+          <a href="./{{node.url}}" id="nav-{{node.name}}">
             <img class="tab-icon" src="../images/{{node.icon}}">
             <div class="tab-label">{{node.title}}</div>
           </a>
         </li>
       {% if order == 2 %}
         <li class="tab-item">
-          <a href="#" id="btn-camera">
+          <a href="#" id="nav-camera">
             <img class="tab-icon" src="../images/icon-camera.png">
             <div class="tab-label">Camera</div>
           </a>
