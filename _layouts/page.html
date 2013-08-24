@@ -1,0 +1,15 @@
+{% include header.html %}
+
+	{% if page.title %}
+	<header class="bar-title">
+		<h1 class="title">{{ page.title }}</h1>
+	</header>
+	{% endif %}
+
+	<div class="content">
+		{{ content }}
+	</div>
+
+	{% include nav.html %}
+
+{% include footer.html %}
