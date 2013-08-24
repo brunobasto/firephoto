@@ -1,34 +1,28 @@
 <nav class="bar-tab">
   <ul class="tab-inner">
-    <li class="tab-item active">
-      <a href="#">
-        <img class="tab-icon" src="../images/icon-home.png">
-        <div class="tab-label">Photos</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="../images/icon-event.png">
-        <div class="tab-label">Events</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#" id="record">
-        <img class="tab-icon" src="../images/icon-camera.png">
-        <div class="tab-label">Camera</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="../images/icon-place.png">
-        <div class="tab-label">Places</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="../images/icon-people.png">
-        <div class="tab-label">People</div>
-      </a>
-    </li>
+{% for order in (1..4) %}
+  {% for node in site.pages %}
+    {% if node.order == order %}
+      {% if page.url == node.url %}
+        <li class="tab-item active">
+      {% else %}
+        <li class="tab-item">
+      {% endif %}
+          <a href="./{{node.url}}">
+            <img class="tab-icon" src="../images/{{node.icon}}">
+            <div class="tab-label">{{node.title}}</div>
+          </a>
+        </li>
+      {% if order == 2 %}
+        <li class="tab-item">
+          <a href="#" id="btn-camera">
+            <img class="tab-icon" src="../images/icon-camera.png">
+            <div class="tab-label">Camera</div>
+          </a>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
   </ul>
 </nav>

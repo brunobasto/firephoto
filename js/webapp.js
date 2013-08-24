@@ -1,5 +1,5 @@
 (function (window, document, undefined) {
-    var record = document.querySelector("#record");
+    var record = document.querySelector("#btn-camera");
 
     record.addEventListener('click', function(e) {
         var rec = new MozActivity({
